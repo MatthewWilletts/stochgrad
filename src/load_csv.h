@@ -6,7 +6,6 @@
 #include <fstream>
 #include <iostream>
 
-namespace Eigen{
 
 template<typename M>
 M load_csv(const std::string & path) 
@@ -26,10 +25,9 @@ M load_csv(const std::string & path)
         }
         ++rows;
     }
-    return Map <const Matrix <typename M::Scalar, M::RowsAtCompileTime, M::ColsAtCompileTime, RowMajor> >(
+    return Eigen::Map <const Eigen::Matrix <typename M::Scalar, M::RowsAtCompileTime, M::ColsAtCompileTime, Eigen::RowMajor> >(
         values.data(), rows, values.size()/rows);
 }
 
-} // close namespace
 
 #endif
