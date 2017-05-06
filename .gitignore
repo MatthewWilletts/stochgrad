@@ -1,0 +1,12 @@
+# object directory
+obj/
+
+# build
+*.d
+*.tsk
+
+# log files
+*.log
+
+# sublime project files
+*.sublime-*
